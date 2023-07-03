@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #e1e1e6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+
+  header {
+    background-color: #202024;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 13px 30px -12px;
+    position: relative;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .brand-name {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .navbar-links li {
+    color: slategrey;
+    font-size: 20px;
+
+    transition: color 0.4s;
+  }
+
+  .navbar-links li.active,
+  .navbar-links li:hover {
+    color: seashell;
+  }
+
+  .navbar-links li a {
+    padding: 8px;
+  }
+
+  @media (min-width: 960px) {
+      .hide-on-desktop {
+        display: none;
+      }
+  }
+
+  @media (max-width: 960px) {
+      .navbar-links{
+        opacity: 0;
+        top: 0;
+        transform: translateY(-140%);
+       
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        background-color: #202024;
+        box-shadow: rgba(0, 0, 0, 0.75) 0px 13px 30px -12px;
+        padding: 32px 0;
+        border-top: outset;
+        gap: 0;
+        z-index: -1;
+
+        transition: 0.5s;
+      }
+  
+
+  .navbar-links.show{
+    opacity: 1;
+    top: 100%;
+    transform: translateY(0);
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    line-height: 40px;
+    width: 100%;
+    display: block;
+  }
+
+  .menu-hamb-button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .menu-hamb-button.isOpen .btn-line:nth-child(1){
+    transform: rotate(45deg) translate(5px, 5px); 
+  }
+
+  .menu-hamb-button.isOpen .btn-line:nth-child(2){
+    opacity: 0;
+  }
+
+  .menu-hamb-button.isOpen .btn-line:nth-child(3){
+    transform: rotate(-45deg) translate(8px, -8px); 
+  }
+
+  .btn-line{
+    width: 24px;
+    height: 3px;
+    background-color: aliceblue;
+    transition: 0.3s;
+  }
+
+  .menu-overlay{
+    position: unset; 
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -2;
+  }
+
+  .menu-overlay.show{
+    position: fixed;
+  }
+}
